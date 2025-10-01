@@ -60,4 +60,18 @@ This repo may include multiple languages, frameworks, and tools depending on the
 ## 📌 Notes
 - This repository is **not for production code**.  
 - Expect breaking changes and experimental features.  
-- Collaboration and curiosity are encouraged!  
+- Collaboration and curiosity are encouraged!
+
+---
+
+## 📌 Push images to organisation container registry
+  2. **Reference from any repository**:
+   ```yaml
+   jobs:
+     build:
+       uses: whoisdevopsrnd/.github/.github/workflows/reusable-docker-build.yml@main
+       with:
+         image-name: my-awesome-app
+       secrets:
+         registry-password: ${{ secrets.GITHUB_TOKEN }}
+   ```
